@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image, Button, StyleSheet, ScrollView, FlatList, TouchableOpacity } from 'react-native';
 import axios from 'axios';
+import Icon from 'react-native-vector-icons/FontAwesome'; // Import FontAwesome icons
 
 const DetailScreen = () => {
   const [profile, setProfile] = useState({});
@@ -49,6 +50,12 @@ const DetailScreen = () => {
           style={styles.profileImage}
         />
         <Text style={styles.profileName}>{profile.name}</Text>
+        <View style={styles.profileBioContainer}>
+          <Text style={styles.profileBioText}>I love a colorful life </Text>
+          <Icon name="heart" size={20} color="red" />
+          <Icon name="heart" size={20} color="red" />
+          <Icon name="heart" size={20} color="red" />
+        </View>
         <Text style={styles.profileBio}>{profile.bio}</Text>
         <View style={styles.statsContainer}>
           <View style={styles.stat}>
@@ -84,6 +91,7 @@ const DetailScreen = () => {
             <View style={styles.suggestedAccount}>
               <Image source={{ uri: item.avatar }} style={styles.suggestedAvatar} />
               <Text style={styles.suggestedName}>{item.suggestedName}</Text>
+             
               <Button title="Follow" onPress={() => {}} />
             </View>
           )}
@@ -130,6 +138,15 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     marginVertical: 10,
   },
+  profileBioContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 10,
+  },
+  profileBioText: {
+    fontSize: 16,
+    color: 'gray',
+  },
   profileBio: {
     fontSize: 16,
     color: 'gray',
@@ -175,7 +192,6 @@ const styles = StyleSheet.create({
   suggestedAccount: {
     alignItems: 'center',
     marginHorizontal: 10,
-    width: "100%",
   },
   suggestedAvatar: {
     width: 100,
@@ -186,6 +202,15 @@ const styles = StyleSheet.create({
   suggestedName: {
     fontSize: 14,
     marginBottom: 5,
+  },
+  suggestedBioContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginBottom: 5,
+  },
+  suggestedBioText: {
+    fontSize: 14,
+    color: 'gray',
   },
   videosSection: {
     padding: 20,
