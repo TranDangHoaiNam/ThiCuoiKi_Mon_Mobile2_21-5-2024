@@ -25,7 +25,7 @@ const DetailScreen = () => {
 
   const fetchSuggestedAccounts = async () => {
     try {
-      const response = await axios.get('https://655841139c0b643cb2d6e996.mockapi.io/sug'); // Replace with your API
+      const response = await axios.get('https://664c461035bbda10987f8fe2.mockapi.io/sug'); // Replace with your API
       setSuggestedAccounts(response.data);
     } catch (error) {
       console.error(error);
