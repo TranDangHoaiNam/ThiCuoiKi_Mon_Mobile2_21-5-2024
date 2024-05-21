@@ -83,7 +83,7 @@ const DetailScreen = () => {
           renderItem={({ item }) => (
             <View style={styles.suggestedAccount}>
               <Image source={{ uri: item.avatar }} style={styles.suggestedAvatar} />
-              <Text style={styles.suggestedName}>{item.name}</Text>
+              <Text style={styles.suggestedName}>{item.suggestedName}</Text>
               <Button title="Follow" onPress={() => {}} />
             </View>
           )}
@@ -175,10 +175,11 @@ const styles = StyleSheet.create({
   suggestedAccount: {
     alignItems: 'center',
     marginHorizontal: 10,
+    width: "100%",
   },
   suggestedAvatar: {
-    width: 60,
-    height: 60,
+    width: 100,
+    height: 80,
     borderRadius: 30,
     marginBottom: 5,
   },

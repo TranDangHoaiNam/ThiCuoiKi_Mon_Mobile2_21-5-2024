@@ -1,6 +1,7 @@
 // view/LaunchScreen.js
 import React from 'react';
 import { StyleSheet, Text, View, TouchableOpacity, ImageBackground } from 'react-native';
+import * as Animatable from 'react-native-animatable';
 
 export default function LaunchScreen({ navigation }) {
   return (
@@ -9,16 +10,28 @@ export default function LaunchScreen({ navigation }) {
       style={styles.background}
     >
       <View style={styles.container}>
-        <Text style={styles.text}>Welcome to Premium!</Text>
+        <Animatable.Text 
+          animation="fadeIn" 
+          duration={2000} 
+          style={styles.text}
+        >
+          Welcome to Premium!
+        </Animatable.Text>
         <View>
           <Text style={styles.text}>...</Text>
         </View>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => navigation.navigate('HomeScreen')}
+        <Animatable.View 
+          animation="bounce" 
+          iterationCount="infinite"
+          direction="alternate"
         >
-          <Text style={styles.buttonText}>Startlistening</Text>
-        </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => navigation.navigate('HomeScreen')}
+          >
+            <Text style={styles.buttonText}>Start listening</Text>
+          </TouchableOpacity>
+        </Animatable.View>
       </View>
     </ImageBackground>
   );
@@ -47,7 +60,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     borderRadius: 15,
     width: "100%",
-
   },
   buttonText: {
     color: '#fff',
