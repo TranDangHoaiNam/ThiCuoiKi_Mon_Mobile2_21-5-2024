@@ -10,7 +10,7 @@ export default function LaunchScreen({ navigation }) {
       style={styles.background}
     >
       <View style={styles.container}>
-        <Animatable.Text 
+        <Animatable.Text  
           animation="fadeIn" 
           duration={2000} 
           style={styles.text}
